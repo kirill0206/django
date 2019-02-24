@@ -1,0 +1,4 @@
+django==2.1.7
+mysql-connector-python==8.0.13
+pip-chill==0.1.8
+virtualenvwrapper-win==1.2.5
