@@ -4,12 +4,12 @@ from django.shortcuts import render
 
 
 def main(request):
-	return render(request, 'mainapp/index.html')
+    return render(request, 'mainapp/index.html')
 
 
 def catalog(request):
-	return render(request, 'mainapp/catalog.html')
+    return render(request, 'mainapp/catalog.html')
 
 
 def contact(request):
-	return render(request, 'mainapp/contact.html')
+    return render(request, 'mainapp/contact.html')
