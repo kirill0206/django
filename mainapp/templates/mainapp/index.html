@@ -10,5 +10,17 @@
         <h2><strong>Здравствуйте!<br>Мы рады Вас приветствовать в&nbsp;нашем магазине свадебных изделий ручной работы!<br>
             Надеемся, что в&nbsp;нашем каталоге Вы с&nbsp;легкостью найдете то,&nbsp;что придаст Вашей свадьбе немного шарма</strong>
         </h2>
+        {% for product in products %}
+            <div class="block">
+            <a href="#">
+              <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+              <div class="text">
+                <h3>{{ product.category.name }}</h3>
+                <h4>{{ product.name }}</h4>
+                <p>{{ product.description }}</p>
+              </div>
+            </a>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
