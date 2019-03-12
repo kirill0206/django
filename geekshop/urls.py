@@ -17,15 +17,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
 import mainapp.views as mainapp
+import authapp.views as authapp
 
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', mainapp.main, name='main'),
-    url(r'^catalog/', include('mainapp.urls', namespace='catalog'))
+    path('', mainapp.main, name='main'),
+    url(r'^catalog/', include(('mainapp.urls', 'mainapp'), namespace='catalog')),
     url(r'^contact/', mainapp.contact, name='contact'),
     url(r'^admin/', admin.site.urls,  name='admin'),
+    url(r'^auth/', include(('authapp.urls', 'authapp'), namespace='auth'))
     #path(r'^', mainapp.main, name='main'),
 ]
 
