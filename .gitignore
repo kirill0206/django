@@ -1,4 +1,6 @@
 *.sqlite3
 *.pvc
 .idea
-venv/
+#virtual enviroment
+.venv/
+.venv/*
