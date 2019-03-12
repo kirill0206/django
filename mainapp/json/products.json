@@ -1,0 +1,32 @@
+[
+  {
+    "category": "Шкатулки",
+    "name": "Шкатулка №1",
+	"price": 1000,
+	"quantity": 5
+  },
+  {
+    "category": "Шкатулки",
+    "name": "Шкатулка №2",
+    "price": 2000,
+    "quantity": 1
+	},
+  {
+    "category": "Заколки",
+    "name": "Заколка синяя",
+    "price": 300,
+    "quantity": 2
+  },
+  {
+    "category": "Бутаньерки",
+    "name": "Бутаньерка №1",
+    "price": 800,
+    "quantity": 2
+  },
+  {
+    "category": "Бутаньерки",
+    "name": "Бутаньерка №2",
+    "price": 1600,
+    "quantity": 11
+  }
+]
