@@ -1,3 +1,4 @@
+from django.conf.urls import url
 from django.urls import path
 
 import mainapp.views as mainapp
@@ -5,6 +6,6 @@ import mainapp.views as mainapp
 app_name = 'mainapp'
 
 urlpatterns = [
-   path('', mainapp.catalog, name='index'),
-   path('<int:pk>/', mainapp.catalog, name='catalog'),
+   url('', mainapp.catalog, name='index'),
+   path('<int:pk>/', mainapp.catalog, name='category'),
 ]

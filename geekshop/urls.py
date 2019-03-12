@@ -22,8 +22,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', mainapp.main, name='main'),
-    url(r'^catalog/', include('mainapp.urls', namespace='catalog'))
+    path('', mainapp.main, name='main'),
+    url(r'^catalog/', include('mainapp.urls', namespace='catalog')),
     url(r'^contact/', mainapp.contact, name='contact'),
     url(r'^admin/', admin.site.urls,  name='admin'),
     #path(r'^', mainapp.main, name='main'),

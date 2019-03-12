@@ -10,6 +10,7 @@ def main(request):
     products = Product.objects.all()[:4]
 
     content = {'title': title, 'products': products}
+
     return render(request, 'mainapp/index.html', content)
 
 
