@@ -2,5 +2,6 @@
 *.pvc
 .idea
 #virtual enviroment
+.venv
 .venv/
 .venv/*
