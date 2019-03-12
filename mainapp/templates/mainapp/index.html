@@ -5,6 +5,16 @@
 {% endblock %}
 
 {% block content %}
+    {% if user.is_anonymous %}
+        <h3>Привет, аноним</h3>
+        <div>
+            <a href="{% url 'auth:login' %}">Выполни вход!</a> или <a href="{% url 'auth:register' %}"> зарегистрируйся</a>!
+        </div>>
+    {% else %}
+        <h2>Привет, {{ user.username|title }}</h2>
+        <a href="{% url 'auth:logout' %}">Выход!</a>
+    {% endif %}
+
     <div class="content">
         <h1><strong>Магазин свадебных украшений ручной работы</strong></h1>
         <h2><strong>Здравствуйте!<br>Мы рады Вас приветствовать в&nbsp;нашем магазине свадебных изделий ручной работы!<br>

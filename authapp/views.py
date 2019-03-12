@@ -50,8 +50,10 @@ def register(request):
         register_form = ShopUserRegisterForm(request.POST, request.FILES)
 
         if register_form.is_valid():
-            register_form.save()
-            return HttpResponseRedirect(reverse('auth:login'))
+            new_user = register_form.save()
+            auth.login(request, new_user)
+            return HttpResponseRedirect(reverse('main'))
+
     else:
         register_form = ShopUserRegisterForm()
 

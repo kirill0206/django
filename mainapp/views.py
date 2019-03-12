@@ -6,7 +6,7 @@ from mainapp.models import Product
 
 
 def main(request):
-    return render(request, 'mainapp/index.html', context={'name': 'Kirill', 'items': ['item1', 'item2', 'item3']})
+    return render(request, 'mainapp/index.html', context={'name': request.user, 'items': ['item1', 'item2', 'item3']})
 
 
 def catalog(request):
