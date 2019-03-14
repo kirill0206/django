@@ -8,7 +8,7 @@
 <!-- Основное тело сайта -->
     <div class="content">
         <h1 style="font-size: 42px"><strong>Каталог</strong></h1>
-        {% for product in catalog %}
+        {% for product in same_products %}
             <div>{{ product.name }} ({{ product.category.name }})</div>
             {% if product.image %}
                 <img src={{ product.image.url }} />

@@ -24,10 +24,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', mainapp.main, name='main'),
-    url(r'^catalog/', include(('mainapp.urls', 'mainapp'), namespace='catalog')),
+    url(r'^products/', include(('mainapp.urls', 'mainapp'), namespace='products')),
     url(r'^contact/', mainapp.contact, name='contact'),
     url(r'^admin/', admin.site.urls,  name='admin'),
-    url(r'^auth/', include(('authapp.urls', 'authapp'), namespace='auth'))
+    url(r'^auth/', include(('authapp.urls', 'authapp'), namespace='auth')),
+    url(r'^basket/', include(('basketapp.urls', 'basketapp'), namespace='basket'))
     #path(r'^', mainapp.main, name='main'),
 ]
 
