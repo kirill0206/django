@@ -9,6 +9,32 @@ def main(request):
     return render(request, 'mainapp/index.html', context={'name': request.user, 'items': ['item1', 'item2', 'item3']})
 
 
+def get_basket(user):
+    if user.is_authenticated:
+        return Basket.objects.filter(user=user)
+    else:
+        return []
+
+
+def get_hot_product():
+    return Product.objects.order_by("?").first()
+
+
+def get_hot_product_from_admin():
+    hot_products = Product.objects.filter(is_hot=True)
+    if hot_products:
+        hot_product = hot_products[0]
+    else:
+        hot_product = Product.objects.first()
+    return hot_product
+
+
+def get_same_products(hot_product):
+    same_products = Product.objects.filter(category=hot_product.category).exclude(pk=hot_product.pk)[:3]
+
+    return same_products
+
+
 def products(request, pk=None):
     print(pk)
 
@@ -34,7 +60,7 @@ def products(request, pk=None):
             'basket': basket,
         }
 
-        return render(request, 'mainapp/product_list.html', context)
+        return render(request, 'mainapp/products_list.html', context)
 
     hot_product = get_hot_product_from_admin()
     same_products = get_same_products(hot_product)
@@ -57,9 +83,10 @@ def product(request, pk):
         'title': title,
         'links_menu': ProductCategory.objects.all(),
         'product': get_object_or_404(Product, pk=pk),
+        'basket': get_basket(request.user),
     }
 
-    return render(request, 'mainapp/products.html', content)
+    return render(request, 'mainapp/product.html', content)
 
 
 def contact(request):

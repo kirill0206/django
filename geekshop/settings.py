@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 # User model
 AUTH_USER_MODEL = 'authapp.ShopUser'
 
+LOGIN_URL = '/auth/login/'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -129,4 +131,5 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_DIR, '../media')
+
