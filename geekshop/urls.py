@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls,  name='admin'),
     url(r'^auth/', include(('authapp.urls', 'authapp'), namespace='auth')),
     url(r'^basket/', include(('basketapp.urls', 'basketapp'), namespace='basket'))
+    url(r'^admin/', include('adminapp.urls', namespace='admin'))
     #path(r'^', mainapp.main, name='main'),
 ]
 
