@@ -13,6 +13,9 @@ class Basket(models.Model):
     created = models.DateTimeField(verbose_name='время добавления', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='время последнего изменения', auto_now=True)
 
+    def __str__(self):
+        return '{} - {}'.format(self.user, self.product)
+
 @property
 def product_cost(self):
     "return cost of all products this type"
@@ -30,4 +33,4 @@ def total_cost(self):
     "return total cost for user"
     _items = Basket.objects.filter(user=self.user)
     _totalcost = sum(list(map(lambda x: x.product_cost, _items)))
-    return _totalco
+    return _totalcost
