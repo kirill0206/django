@@ -1,17 +1,17 @@
-{% extends 'adminapp/base.html' %}
+% extends 'adminapp/base.html' %}
 {% load staticfiles %}
 
 {% block content %}
   <div class="products_list">
     <button class="new_product">
-      <a href={% url 'admin:product_create' category.pk %}>
+      <a href={% url 'admin_custom:product_create' category.pk %}>
         новый продукт
       </a>
     </button>
-        
+
     {% for object in objects %}
       <div class="product_record">
-        <img 
+        <img width="200" height="200"
           src="/media/{{object.image|default:'products_images/default.jpg'}}"
           alt="{{ object.name }}">
         <div class="product_name">
@@ -19,17 +19,17 @@
         </div>
         <div class="product_actions">
           <button>
-            <a href={% url 'admin:product_read' object.pk %}>
+            <a href={% url 'admin_custom:product_read' object.pk %}>
               подробнее
             </a>
           </button>
           <button>
-            <a href={% url 'admin:product_update' object.pk %}>
+            <a href={% url 'admin_custom:product_update' object.pk %}>
               редактировать
             </a>
           </button>
           <button>
-            <a href={% url 'admin:product_delete' object.pk %}>
+            <a href={% url 'admin_custom:product_delete' object.pk %}>
               удалить
             </a>
           </button>
@@ -46,4 +46,4 @@
       </div>
     {% endfor%}
   </div>
-{% endblock %}
+{% endblock %} 

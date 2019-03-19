@@ -13,6 +13,9 @@ class Basket(models.Model):
     created = models.DateTimeField(verbose_name='время добавления', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='время последнего изменения', auto_now=True)
 
+    def __str__(self):
+        return '{} - {}'.format(self.user, self.product)
+
 @property
 def product_cost(self):
     "return cost of all products this type"

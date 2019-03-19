@@ -4,11 +4,11 @@
 {% block content %}
   <div class="categories_list">
     <button class="new_category">
-      <a href={% url 'admin:category_create' %}>
-        новая категория
+      <a href={% url 'admin_custom:category_create' %}>
+        Создать новую категорию
       </a>
     </button>
-        
+
     {% for object in objects %}
       <div class="category_record">
         <div class="category_name">
@@ -16,17 +16,17 @@
         </div>
         <div class="category_actions">
           <button>
-            <a href={% url 'admin:products' object.pk %}>
+            <a href={% url 'admin_custom:products' object.pk %}>
               товары категории
             </a>
           </button>
           <button>
-            <a href={% url 'admin:category_update' object.pk %}>
+            <a href={% url 'admin_custom:category_update' object.pk %}>
               редактировать
             </a>
           </button>
           <button>
-            <a href={% url 'admin:category_delete' object.pk %}>
+            <a href={% url 'admin_custom:category_delete' object.pk %}>
               удалить
             </a>
           </button>

@@ -224,3 +224,7 @@
     text-align: left;
     padding: 10px 0 0 50px;
 }
+
+.category_record.not_active {
+    opacity: 0.5;
+}
